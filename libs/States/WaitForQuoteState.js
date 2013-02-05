@@ -1,5 +1,10 @@
 var State = require('./State.js');
 
+/**
+ *
+ * @param stringsParser
+ * @constructor
+ */
 function WaitForQuoteState(stringsParser) {
     State.apply(this);
 
@@ -8,6 +13,12 @@ function WaitForQuoteState(stringsParser) {
 }
 
 WaitForQuoteState.prototype = {
+    /**
+     * Character handler
+     *
+     * @param c
+     * @param callback
+     */
     handle:function handle(c, callback) {
         var ValueState = require('./ValueState.js');
 

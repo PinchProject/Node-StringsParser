@@ -1,5 +1,12 @@
 var State = require('./State.js');
 
+/**
+ *
+ * @param stringsParser
+ * @param key
+ * @param c
+ * @constructor
+ */
 function WaitForSlashState(stringsParser, key, c) {
     State.apply(this);
 
@@ -9,6 +16,12 @@ function WaitForSlashState(stringsParser, key, c) {
 }
 
 WaitForSlashState.prototype = {
+    /**
+     * Character handler
+     *
+     * @param c
+     * @param callback
+     */
     handle:function handle(c, callback) {
         var InitState = require('./InitState.js'),
             MultiCommentState = require('./MultiCommentState.js');

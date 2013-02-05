@@ -1,5 +1,10 @@
 var State = require('./State.js');
 
+/**
+ *
+ * @param stringsParser
+ * @constructor
+ */
 function InitState(stringsParser) {
     State.apply(this);
 
@@ -9,6 +14,12 @@ function InitState(stringsParser) {
 }
 
 InitState.prototype = {
+    /**
+     * Character handler
+     *
+     * @param c
+     * @param callback
+     */
     handle:function handle(c, callback) {
         var KeyState = require('./KeyState.js'),
             StartCommentState = require('./StartCommentState.js');
