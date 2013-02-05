@@ -1,5 +1,11 @@
 var State = require('./State.js');
 
+/**
+ *
+ * @param stringsParser
+ * @param key
+ * @constructor
+ */
 function EscapeState(stringsParser, key) {
     State.apply(this);
 
@@ -10,6 +16,12 @@ function EscapeState(stringsParser, key) {
 }
 
 EscapeState.prototype = {
+    /**
+     * Character handler
+     *
+     * @param c
+     * @param callback
+     */
     handle:function handle(c, callback) {
         var ValueState = require('./ValueState.js');
 

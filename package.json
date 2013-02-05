@@ -2,7 +2,37 @@
     "name":"node-stringsparser",
     "description":"Parser for XCode strings file",
     "version":"1.0.0",
+    "author":"PinchProject <info@pinchproject.com>",
     "dependencies":{
-        "async":"0.1.22"
+        "async":">= 0.1"
+    },
+    "contributors":[
+        {
+            "name":"Ismael Gorissen",
+            "email":"ismael.gorissen@pinchproject.com"
+        },
+        {
+            "name":"Damien Rambout",
+            "email":"damien.rambout@pinchproject.com"
+        }
+    ],
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/PinchProject/Node-StringsParser.git"
+    },
+    "bugs":{
+        "url":"https://github.com/PinchProject/Node-StringsParser/issues"
+    },
+    "keywords":[
+        "xcode",
+        "strings",
+        "parser"
+    ],
+    "directories":{
+        "libs":"libs/"
+    },
+    "main":"./libs/StringsParser",
+    "engines":{
+        "node":">= 0.8"
     }
 }

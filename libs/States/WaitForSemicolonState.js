@@ -1,13 +1,24 @@
 var State = require('./State.js');
 
-var WaitForSemicolonState = function WaitForSemicolonState(stringsParser) {
+/**
+ *
+ * @param stringsParser
+ * @constructor
+ */
+function WaitForSemicolonState(stringsParser) {
     State.apply(this);
 
     this._stringsParser = stringsParser;
     this._ignored = [' ', '\n', '\t', '\r'];
-};
+}
 
 WaitForSemicolonState.prototype = {
+    /**
+     * Character handler
+     *
+     * @param c
+     * @param callback
+     */
     handle:function handle(c, callback) {
         var InitState = require('./InitState.js');
 

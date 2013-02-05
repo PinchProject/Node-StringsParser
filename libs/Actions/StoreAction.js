@@ -1,5 +1,11 @@
 var Action = require('./Action.js');
 
+/**
+ *
+ * @param c
+ * @param keyState
+ * @constructor
+ */
 function StoreAction(c, keyState) {
     Action.apply(this);
 
@@ -8,6 +14,12 @@ function StoreAction(c, keyState) {
 }
 
 StoreAction.prototype = {
+    /**
+     * Append character in 'key' variable
+     *
+     * @param stringsParser
+     * @param callback
+     */
     perform:function perform(stringsParser, callback) {
         var self = this;
 

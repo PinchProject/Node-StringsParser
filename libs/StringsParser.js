@@ -1,13 +1,21 @@
+/**
+ *
+ * @param string
+ * @param callbacks
+ * @constructor
+ */
 function StringsParser(string, callbacks) {
     this._strings = string || null;
     this._callbacks = callbacks || null;
     this._done = false;
     this._running = true;
     this._currentState = null;
-    this._error = null;
 }
 
 StringsParser.prototype = {
+    /**
+     * Check if the parser can run
+     */
     process:function process() {
         var self = this;
 
@@ -19,6 +27,11 @@ StringsParser.prototype = {
             self._parse();
         }
     },
+    /**
+     * Run the parsing
+     *
+     * @private
+     */
     _parse:function _parse() {
         var async = require('async');
 
@@ -48,22 +61,27 @@ StringsParser.prototype = {
             if (err) {
                 self._handleError(err);
             } else {
+                self._done = true;
                 self._callbacks.onEnd();
             }
         });
     },
+    /**
+     * Set a new state for the parser
+     *
+     * @param state
+     * @private
+     */
     _setState:function _setState(state) {
         var self = this;
         self._currentState = state;
     },
-    _getError:function _getError() {
-        var self = this;
-        return self._error;
-    },
-    _setError:function _setError(error) {
-        var self = this;
-        self._error = error;
-    },
+    /**
+     * Error handler
+     *
+     * @param msg
+     * @private
+     */
     _handleError:function _handleError(msg) {
         var self = this,
             err = new Error(msg);
@@ -73,6 +91,17 @@ StringsParser.prototype = {
         } else {
             throw err;
         }
+    },
+    /**
+     * Reset variables to re-run the parser
+     *
+     * @private
+     */
+    _reset:function _reset() {
+        var self = this;
+
+        self._currentState = null;
+        self._done = false;
     }
 };
 

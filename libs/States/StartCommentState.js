@@ -1,5 +1,10 @@
 var State = require('./State.js');
 
+/**
+ *
+ * @param stringsParser
+ * @constructor
+ */
 function StartCommentState(stringsParser) {
     State.apply(this);
 
@@ -8,6 +13,12 @@ function StartCommentState(stringsParser) {
 }
 
 StartCommentState.prototype = {
+    /**
+     * Character handler
+     *
+     * @param c
+     * @param callback
+     */
     handle:function handle(c, callback) {
         var MultiCommentState = require('./MultiCommentState.js'),
             SingleCommentState = require('./SingleCommentState.js');

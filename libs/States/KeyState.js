@@ -1,5 +1,10 @@
 var State = require('./State.js');
 
+/**
+ *
+ * @param stringsParser
+ * @constructor
+ */
 var KeyState = function KeyState(stringsParser) {
     State.apply(this);
 
@@ -9,6 +14,12 @@ var KeyState = function KeyState(stringsParser) {
 };
 
 KeyState.prototype = {
+    /**
+     * Character handler
+     *
+     * @param c
+     * @param callback
+     */
     handle:function handle(c, callback) {
         var WaitForEqualState = require('./WaitForEqualState.js');
 

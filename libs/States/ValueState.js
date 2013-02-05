@@ -1,5 +1,11 @@
 var State = require('./State.js');
 
+/**
+ *
+ * @param stringsParser
+ * @param key
+ * @constructor
+ */
 function ValueState(stringsParser, key) {
     State.apply(this);
 
@@ -8,6 +14,12 @@ function ValueState(stringsParser, key) {
 }
 
 ValueState.prototype = {
+    /**
+     * Character handler
+     *
+     * @param c
+     * @param callback
+     */
     handle:function handle(c, callback) {
         var WaitForSemicolonState = require('./WaitForSemicolonState.js'),
             EscapeState = require('./EscapeState.js');
