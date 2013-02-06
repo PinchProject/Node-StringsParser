@@ -1,11 +1,11 @@
 #Node-StringsParser
 
-```
+```console
 npm install node-stringsparser
 ```
 
 ##How to use
-```
+```javascript
 var StringsParser = require('node-stringsparser');
 
 var parser = new StringsParser('strings here', {
